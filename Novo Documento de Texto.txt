@@ -1,0 +1,6 @@
+model/db_class.php
+cms/model/db_class.php
+view/conhecaseudestino_view.php
+css/promocoes.php
+view/perfilUsuario.php
+view/perfilParceiro.php
