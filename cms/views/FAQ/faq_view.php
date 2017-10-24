@@ -7,27 +7,24 @@
 
 <div class="selectgpp">
     <div id="titulogpp">
-        Gerenciamento do FAQ
+        <h1>Gerenciamento do FAQ</h1>
     </div>
     <div id="containerTable">
-        <table class="table11 sortable">
+        <table class="sortable">
             <tr>
-                <td class ="titulo22">
-                   Identificação
-                </td>
-                <td class ="titulo22">
+                <th>
                    Pergunta
-                </td>
-                 <td class ="titulo22">
+               </th>
+                 <th>
                     Resposta
-                </td>
-                <td class ="titulo22">
+                </th>
+                <th>
                     Categoria
-                </td>
-                <td class ="titulo22">
+                </th>
+                <th class="thOpcoes">
 
                     Opções
-                </td>   
+                </th>
             </tr>
 
         <?php
@@ -42,10 +39,7 @@
             while ($cont < count($rows)) {
 
         ?>
-            <tr> 
-                <td class="tdnumeros">
-                    <?php echo($rows[$cont]->idFaq); ?>
-                </td>
+            <tr>
                 <td class="tdnumeros">
                     <?php echo($rows[$cont]->pergunta); ?>
                 </td>
@@ -53,7 +47,7 @@
                    <?php echo($rows[$cont]->resposta); ?>
                 </td>
                 <td class="tdnumeros">
-                   <?php echo($rows[$cont]->idCategoriaFaq); ?>
+                   <?php echo($rows[$cont]->categoriaFaq); ?>
                 </td>
 
                 <td class="tdnumeros">
@@ -73,16 +67,18 @@
     </div>
     <table class="formulariozinho">
       <tr>
-              <td class="titulo22">
+              <th>
                       Pergunta
-              </td>
-              <td class="titulo22">
+              </th>
+              <th>
                      Resposta
-              </td>
-            
-               <td class="titulo22">
+              </th>
+
+               <th class="titulo22">
                    Categoria
-              </td>
+              </th>
+
+              <th class="thOpcoes"></th>
       </tr>
 
       <?php
@@ -108,31 +104,31 @@
 
       <tr>
           <td class="tdnumeros">
-            <input class="inputFormulario" name="txtpergunta" value="<?php echo($pergunta);?>" placeholder="" >
+            <input type="text" name="txtpergunta" value="<?php echo($pergunta);?>" placeholder="" >
           </td>
            <td class="tdnumeros">
-             <input class="inputFormulario" name="txtresposta" value="<?php echo($resposta);?>" placeholder="" >
+             <input type="text" name="txtresposta" value="<?php echo($resposta);?>" placeholder="" >
           </td>
             <td class="tdnumeros">
-                
-             <select class="inputFormulario" name="txtcategoria" value="<?php echo($idCategoriaFaq);?>" placeholder="" > 	
+
+             <select class="inputFormulario" name="txtcategoria" value="<?php echo($idCategoriaFaq);?>" placeholder="" >
               <?php
             	$sql="select * from tbl_categoriafaq";
 				$select = mysql_query($sql);
-											
+
 				while($rs = mysql_fetch_array($select))
-											
+
                 {
 				?>
 				<option value="<?php echo($rs['idCategoriaFaq']);?>"><?php echo($rs['categoriaFaq']);?></option>
-											
+
 				<?php
 				}
 				?>
                 </select>
           </td>
-           <td  class="tdnumeros">
-          <input type="submit" name="btnAlterar" value="" class="btnAlterar">
+           <td class="tdnumeros">
+          <input type="submit" name="btnAlterar" value="SALVAR">
         </td>
          </tr>
       <?php
@@ -144,12 +140,12 @@
 
         </td>
       </tr>
-    
+
         </form>
-        
-        
+
+
     </table>
-      
-  
-        
+
+
+
 </div>

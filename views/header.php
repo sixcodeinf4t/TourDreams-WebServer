@@ -153,7 +153,7 @@
 
 
 						 ?>
-						<li><input type="checkbox" name="<?php echo('comodidadeHotel'.$rows[$cont]->comodidadesHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
+						<li><input type="checkbox" name="<?php echo('chk'.$rows[$cont]->idComodidadeHotel) ?>" value="<?php echo ($rows[$cont]->comodidadesHotel) ?>"><label><?php echo ($rows[$cont]->comodidadesHotel) ?></label></li>
 						<?php
 						$cont +=1;
 						}

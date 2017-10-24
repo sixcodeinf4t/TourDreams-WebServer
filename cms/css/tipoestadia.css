@@ -1,18 +1,18 @@
 section{
-    height: 828px;
+    height: 826px;
     background-color: #fcfcf4;
     float: left;
 }
 
 .sectionTipoEstadia{
     height: 100%;
-    width: 100%;
+    width: 85%;
 
 }
 
 .tituloPagina{
     height: 80px;
-    width: 400px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -21,23 +21,24 @@ section{
 .tituloPagina h1{
     font-size: 33px;
     color: #0e2568;
-    font-family: Ebrima;
+    font-family: RalewayRegular;
     font-weight: lighter;
 }
 
 .divTabela{
-    height: 500px;
+
     width: 800px;
+    max-height: 500px;
     overflow: auto;
-    border-bottom: 1px solid #ccc;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.6);
 }
 
 .divTabela table{
     width: 100%;
     text-align: center;
-
+    border-collapse: collapse;
 }
 
 .divTabela table th{
@@ -45,21 +46,34 @@ section{
     font-size: 20px;
 }
 
+.divTabela table th:first-of-type
+{
+    border-right: 1px solid #ccc;
+}
+
+
 .divTabela table td{
     font-family: Calibri Light;
     font-size: 18px;
 }
 
-.formNivel{
-    width: 400px;
+.divTabela table td:first-of-type
+{
+    border-right: 1px solid #ccc;
+}
 
+.formNivel{
+    border-top: solid 1px #ccc;
+    width: 800px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .formNivel table{
     height: 100%;
-    width: 100%;
+    width: 50%;
+    margin: auto;
 }
 
 .formNivel table input[type='text']{
@@ -78,4 +92,10 @@ section{
     background-color: #0e2568;
     border: 1px solid #ccc;
     color: #fff;
+}
+
+#thTipoEstadia
+{
+    width: 85%;
+    max-width: 85%;
 }

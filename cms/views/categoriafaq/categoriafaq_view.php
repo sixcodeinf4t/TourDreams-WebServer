@@ -7,24 +7,19 @@
 
 <div class="selectgpp">
     <div id="titulogpp">
-        Gerenciamento de Categoria FAQ
+        <h1>Gerenciamento de Categoria FAQ</h1>
     </div>
-    
-    <div id="containerTable">
-        
-        <table class="table11 sortable">
-            <tr>
-                <td class ="titulo22">
-                   Identificação
-                </td>
-                <td class ="titulo22">
-                Categoria do FAQ
-                </td>
-               
-                <td class ="titulo22">
 
+    <div id="containerTable">
+
+        <table class="sortable">
+            <tr>
+                <th>
+                    Categoria
+                </th>
+                <th class="thOpcoes">
                     Opções
-                </td>   
+                </th>
             </tr>
 
         <?php
@@ -39,11 +34,8 @@
             while ($cont < count($rows)) {
 
         ?>
-            <tr> 
-                  
-                <td class="tdnumeros">
-                   <?php echo($rows[$cont]->idCategoriaFaq); ?>
-                </td>
+            <tr>
+
                 <td class="tdnumeros">
                    <?php echo($rows[$cont]->categoriaFaq); ?>
                 </td>
@@ -63,13 +55,14 @@
         ?>
         </table>
     </div>
-    
+
     <table class="formulariozinho">
       <tr>
-              <td class="titulo22">
-                  Categoria FAQ
-              </td>
-            
+              <th>
+                  Categoria
+              </th>
+              <th class="thOpcoes">
+              </th>
       </tr>
 
       <?php
@@ -91,10 +84,10 @@
 
       <tr>
           <td class="tdnumeros">
-            <input class="inputFormulario" name="txtcategoriafaq" value="<?php echo($categoriaFaq);?>" placeholder="" >
+            <input type="text" placeholder="Geral" name="txtcategoriafaq" value="<?php echo($categoriaFaq);?>" placeholder="" >
           </td>
            <td  class="tdnumeros">
-          <input type="submit" name="btnAlterar" value="" class="btnAlterar">
+          <input type="submit" name="btnAlterar" value="SALVAR">
         </td>
          </tr>
       <?php
@@ -106,10 +99,10 @@
 
         </td>
       </tr>
-    
+
         </form>
-        
-        
+
+
     </table>
-        
+
 </div>

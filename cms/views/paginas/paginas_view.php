@@ -13,7 +13,8 @@
         <table class="table11 sortable">
             <tr>
                 <td class ="imagems">
-                  <a href="homepage.php"><img src="imagens/homepage.png" alt="home"></a>
+                <a href="paginahome.php"> <img src="imagens/homepage.png" alt="home"></a>
+                   
                 </td>
                 
                 <td class ="imagems">

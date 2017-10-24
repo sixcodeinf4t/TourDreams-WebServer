@@ -1,13 +1,12 @@
 section{
-    height: 828px;
+    height: 826px;
     background-color: #fcfcf4;
-    float: left;
 }
 
 .sectionNivel{
     height: 100%;
-    width: 100%;
-
+    width: 85%;
+    overflow: auto;
 }
 
 .tituloPagina{
@@ -21,17 +20,17 @@ section{
 .tituloPagina h1{
     font-size: 33px;
     color: #0e2568;
-    font-family: Ebrima;
+    font-family: RalewayRegular;
     font-weight: lighter;
 }
 
 .divTabela{
-    height: 500px;
+    max-height: 500px;
     width: 800px;
     overflow: auto;
-    border-bottom: 1px solid #ccc;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.6);
 }
 
 .divTabela table{
@@ -51,15 +50,17 @@ section{
 }
 
 .formNivel{
-    width: 400px;
-
+    width: 800px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    border-top: 1px solid #ccc;
 }
 
 .formNivel table{
     height: 100%;
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .formNivel table input[type='text']{

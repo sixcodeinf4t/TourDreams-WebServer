@@ -1,0 +1,32 @@
+#titulo{
+    
+    font-size:50px;
+    font-family: Ebrima;
+    font-style: normal;
+    color:#0e2568;
+    margin-left: 515px;
+    margin-top: 30px;
+  
+}
+
+.table{
+    height: 900px;
+    width: 900px;
+    margin-left: 20px;
+    
+}
+
+.td{
+    color: #ffffff;
+    width:350px;
+    height: 25px;
+    font-size: 25px;
+    background-color: burlywood;
+}
+.btnSalvar{
+    background-color: blanchedalmond;
+    height: 45px;
+    width: 95px;
+    margin-left: 55px;
+    font-size: 20px;
+}

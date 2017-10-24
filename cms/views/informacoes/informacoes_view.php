@@ -1,33 +1,23 @@
-<?php
-
-
-
-
- ?>
-
 <div class="selectgpp">
     <div id="titulogpp">
-        Gerenciamento de Informações
+        <h1>Gerenciamento de Informações</h1>
     </div>
     <div id="containerTable">
-        <table class="table11 sortable">
+        <table class="sortable">
             <tr>
-                <td class ="titulo22">
-                   Identificação
-                </td>
-                <td class ="titulo22">
-                    Email da TourDreams
-                </td>
-                 <td class ="titulo22">
+                <th class ="thEmail">
+                    Email
+                </th>
+                 <th class ="thLogradouro">
                    Logradouro
-                </td>
-                <td class ="titulo22">
+               </th>
+                <th class ="thTelefone">
                   Telefone
-                </td>
-                <td class ="titulo22">
+              </th>
+                <th class ="thOpcoes">
 
                     Opções
-                </td>   
+                </th>
             </tr>
 
         <?php
@@ -42,18 +32,15 @@
             while ($cont < count($rows)) {
 
         ?>
-            <tr> 
-                <td class="tdnumeros">
-                    <?php echo($rows[$cont]->idInformacao); ?>
-                </td>
+            <tr>
                 <td class="tdnumeros">
                     <?php echo($rows[$cont]->emailTourdreams); ?>
                 </td>
                  <td class="tdnumeros">
-                    <?php echo($rows[$cont]->idLogradouro); ?>
+                    <?php echo($rows[$cont]->logradouro); ?>
                 </td>
                  <td class="tdnumeros">
-                   <?php echo($rows[$cont]->idTelefone); ?>
+                   <?php echo($rows[$cont]->telefone); ?>
                 </td>
 
                 <td class="tdnumeros">
@@ -71,101 +58,102 @@
         ?>
         </table>
     </div>
-    <table class="formulariozinho">
-      <tr>
-              <td class="titulo22">
-                     Email 
+    <div id="formContainer">
+        <table class="formulariozinho">
+          <tr>
+                  <th class="thEmail">
+                         Email
+                  </th>
+                  <th class="thLogradouro">
+                         Logradouro
+                  </th>
+                    <th  class="thTelefone">
+                          Telefone
+                  </th>
+                    <th  class="thOpcoes"></th>
+          </tr>
+
+          <?php
+          $emailTourdreams = null;
+          $idLogradouro = null;
+          $idTelefone= null;
+          $action = "inserir";
+
+          if(isset($_GET['modo'])){
+            if ($_GET['modo']=='visualizar') {
+              $emailTourdreams=$result->emailTourdreams;
+              $idLogradouro=$result->idLogradouro;
+              $idTelefone=$result->idTelefone;
+
+              $action="editar&idInformacao=".$_GET['idInformacao'];
+            }
+          }
+
+
+          ?>
+          <form class="" action="router.php?controller=informacoes&modo=<?php echo($action)?>" method="post">
+
+
+          <tr>
+              <td>
+                <input class="inputFormulario" name="txtemail" value="<?php echo($emailTourdreams);?>" placeholder="exemplo@email.com" >
               </td>
-              <td class="titulo22">
-                     Logradouro
+               <td>
+
+                   <select  class="inputFormulario" name="txtlogradouro" value="<?php echo($idLogradouro);?>" placeholder="">
+                      <?php
+                	$sql="select * from tbl_logradouro";
+    				$select = mysql_query($sql);
+
+    				while($rs = mysql_fetch_array($select))
+
+                    {
+    				?>
+    				<option value="<?php echo($rs['idLogradouro']);?>"><?php echo($rs['logradouro']);?></option>
+
+    				<?php
+    				}
+    				?>
+
+
+                   </select>
               </td>
-                <td class="titulo22">
-                      Telefone
+               <td>
+                   <select   class="inputFormulario" name="txttelefone" value="<?php echo($idTelefone);?>" placeholder="" >
+                      <?php
+                	$sql="select * from tbl_telefone";
+    				$select = mysql_query($sql);
+
+    				while($rs = mysql_fetch_array($select))
+
+                    {
+    				?>
+    				<option value="<?php echo($rs['idTelefone']);?>"><?php echo($rs['telefone']);?></option>
+
+    				<?php
+    				}
+    				?>
+
+
+                   </select>
               </td>
-              
-      </tr>
-
-      <?php
-      $emailTourdreams = null;
-      $idLogradouro = null;
-      $idTelefone= null;
-      $action = "inserir";
-
-      if(isset($_GET['modo'])){
-        if ($_GET['modo']=='visualizar') {
-          $emailTourdreams=$result->emailTourdreams;
-          $idLogradouro=$result->idLogradouro;
-          $idTelefone=$result->idTelefone;
-
-          $action="editar&idInformacao=".$_GET['idInformacao'];
-        }
-      }
+               <td>
+              <input type="submit" name="btnAlterar" value="SALVAR">
+            </td>
+             </tr>
+          <?php
 
 
-      ?>
-      <form class="" action="router.php?controller=informacoes&modo=<?php echo($action)?>" method="post">
+           ?>
+          <tr>
+            <td>
+
+            </td>
+          </tr>
+
+            </form>
+        </table>
+    </div>
 
 
-      <tr>
-          <td class="tdnumeros">
-            <input class="inputFormulario" name="txtemail" value="<?php echo($emailTourdreams);?>" placeholder="" >
-          </td>
-           <td class="tdnumeros">
-               
-               <select  class="inputFormulario" name="txtlogradouro" value="<?php echo($idLogradouro);?>" placeholder="">
-                  <?php
-            	$sql="select * from tbl_logradouro";
-				$select = mysql_query($sql);
-											
-				while($rs = mysql_fetch_array($select))
-											
-                {
-				?>
-				<option value="<?php echo($rs['idLogradouro']);?>"><?php echo($rs['logradouro']);?></option>
-											
-				<?php
-				}
-				?>
-               
-               
-               </select>
-          </td>
-           <td class="tdnumeros">
-               <select   class="inputFormulario" name="txttelefone" value="<?php echo($idTelefone);?>" placeholder="" >
-                  <?php
-            	$sql="select * from tbl_telefone";
-				$select = mysql_query($sql);
-											
-				while($rs = mysql_fetch_array($select))
-											
-                {
-				?>
-				<option value="<?php echo($rs['idTelefone']);?>"><?php echo($rs['telefone']);?></option>
-											
-				<?php
-				}
-				?>
-               
-               
-               </select>
-          </td>
-           <td  class="tdnumeros">
-          <input type="submit" name="btnAlterar" value="" class="btnAlterar">
-        </td>
-         </tr>
-      <?php
-
-
-       ?>
-      <tr>
-        <td class="tdnumeros">
-
-        </td>
-      </tr>
-    
-        </form>
-    </table>
-      
-        
-        
 </div>

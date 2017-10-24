@@ -10,9 +10,8 @@
     <div class="divTabela">
         <table class="sortable">
             <tr>
-                <th>ID</th>
-                <th>Tipo de Estadia</th>
-                <th>Opções</th>
+                <th id="thTipoEstadia">Tipo de Estadia</th>
+                <th id="thOpcoes">Opções</th>
             </tr>
             <?php
 
@@ -27,7 +26,6 @@
 
             ?>
             <tr>
-                <td><?php echo($rows[$cont]->idTipoEstadia) ?></td>
                 <td><?php echo($rows[$cont]->estadia) ?></td>
                 <td><a href="router.php?controller=tipoestadia&modo=visualizar&idEstadia=<?php echo($rows[$cont]->idTipoEstadia); ?>"><img src="imagens/edit.png"></a>            <a href="router.php?controller=tipoestadia&modo=excluir&idEstadia=<?php echo($rows[$cont]->idTipoEstadia); ?>"><img src="imagens/delete.png"></a></td>
             </tr>
